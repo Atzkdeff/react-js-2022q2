@@ -9,7 +9,7 @@ module.exports = (env, argv) => ({
         filename: "index.bundle.js"
     },
     resolve: {
-        extensions: [".js"],
+        extensions: [".js", ".jsx"],
         modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
     devServer: {
@@ -21,7 +21,7 @@ module.exports = (env, argv) => ({
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /nodeModules/,
+                exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
                 }
