@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './genre-toggle.css'
 
 const GENRES = ["All", "Documentary", "Comedy", "Horror", "Crime"]

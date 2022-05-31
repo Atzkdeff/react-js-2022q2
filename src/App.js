@@ -1,7 +1,7 @@
 import './App.css';
-import {title} from "./title/title";
-import {GenreToggle} from "./genre-toggle/genre-toggle";
-import {SearchForm} from "./search-form/search-form";
+import { title } from "./title/title";
+import { GenreToggle } from "./genre-toggle/genre-toggle";
+import { SearchForm } from "./search-form/search-form";
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
         { title }
       </header>
       <main className="app-main">
-        <SearchForm></SearchForm>
-        <GenreToggle></GenreToggle>
+        <SearchForm/>
+        <GenreToggle/>
       </main>
     </div>
   );
