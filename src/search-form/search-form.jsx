@@ -1,4 +1,4 @@
-import {PureComponent} from 'react';
+import { PureComponent } from 'react';
 
 import './search-form.css'
 
