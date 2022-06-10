@@ -1,18 +1,14 @@
-import './App.css';
-import { title } from "./title/title";
-import { GenreToggle } from "./genre-toggle/genre-toggle";
-import { SearchForm } from "./search-form/search-form";
+import './App.scss';
+import {Header} from "./header/header";
+import {Main} from "./main/main";
+import {Footer} from "./footer/footer";
 
 function App() {
   return (
     <div className="app">
-      <header className="app-header">
-        { title }
-      </header>
-      <main className="app-main">
-        <SearchForm/>
-        <GenreToggle/>
-      </main>
+        <Header className="app__header"/>
+        <Main className="app__main"/>
+        <Footer className="app__footer"/>
     </div>
   );
 }
