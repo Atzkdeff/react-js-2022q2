@@ -4,6 +4,7 @@ import {SortOrderSelector} from "./sort-order-selector/sort-order-selector";
 import {SearchResultCounter} from "./search-result-counter/search-result-counter";
 import {MovieList} from "./movie-list/movie-list";
 import {MOVIES_LIST} from "./movies";
+import {ErrorBoundaries} from "../error-boundaries";
 
 export function Main(props) {
   return(
@@ -14,7 +15,9 @@ export function Main(props) {
         </div>
 
         <SearchResultCounter className="main__search-result-counter" counter={39}/>
-        <MovieList movies={MOVIES_LIST}/>
+        <ErrorBoundaries>
+            <MovieList movies={MOVIES_LIST}/>
+        </ErrorBoundaries>
     </main>
   );
 }
