@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import './movie-card.scss'
 
 export function MovieCard({imageSource, description, title, date, genre}) {
@@ -14,4 +16,12 @@ export function MovieCard({imageSource, description, title, date, genre}) {
                 </div>
         </div>
     );
+}
+
+MovieCard.propTypes = {
+    imageSource: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired
 }
