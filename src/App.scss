@@ -10,13 +10,13 @@ html {
   flex-direction: column;
   color: white;
   background-color: #282c34;
-}
 
-.app__header {
-  min-height: 18rem;
-  border-bottom: solid 0.5rem gray;
-}
+  &__header {
+    min-height: 18rem;
+    border-bottom: solid 0.5rem gray;
+  }
 
-.app__main {
-  flex: 1;
+  &__main {
+    flex: 1;
+  }
 }

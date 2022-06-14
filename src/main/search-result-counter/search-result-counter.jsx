@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import './search-result-counter.scss'
 
 export function SearchResultCounter(props) {
@@ -7,4 +9,8 @@ export function SearchResultCounter(props) {
             <span className={"search-result-counter__description"}> movies found</span>
         </div>
     );
+}
+
+SearchResultCounter.propTypes = {
+    counter: PropTypes.number.isRequired,
 }

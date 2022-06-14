@@ -1,10 +1,20 @@
-export function ErrorBoundaries (props) {
-    const SomethingWentWrong = () => <>
-        <h2>Hmmmmmmmmmm.....</h2>
-    </>
+import PropTypes from "prop-types";
 
-    let isEverythingOk = true;
+export class ErrorBoundaries extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false };
+    }
 
-    return <> {isEverythingOk ? props.children : <SomethingWentWrong/>} </>
+    static getDerivedStateFromError(error) {
+        return { hasError: true };
+    }
+
+    render() {
+        if (this.state.hasError) {
+            return <h2>Hmmmmmmmmmm.....</h2>;
+        }
+
+        return this.props.children;
+    }
 }
-
