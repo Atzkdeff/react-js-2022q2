@@ -1,23 +1,27 @@
 import PropTypes from "prop-types";
 
-import './movie-list.scss'
-import {MovieCard} from "./movie-card/movie-card";
+import "./movie-list.scss";
+import { MovieCard } from "./movie-card/movie-card";
 
 export function MovieList(props) {
-    return (
-        <div className="movie-list">
-            {props.movies?.map(movie => <MovieCard
-                key={movie.id}
-                title={movie.title}
-                description={movie.description}
-                imageSource={movie.imageSource}
-                date={movie.date}
-                genre={movie.genre} />)
-            }
-        </div>
-    );
+  return (
+    <div className="movie-list">
+      {props.movies?.map((movie) => (
+        <MovieCard
+          key={movie.id}
+          movie={movie}
+          editMovie={() => {
+            props.editMovie(movie);
+          }}
+          deleteMovie={() => props.deleteMovie(movie.id)}
+        />
+      ))}
+    </div>
+  );
 }
 
 MovieList.propTypes = {
-    movie: PropTypes.array
-}
+  movies: PropTypes.array,
+  editMovie: PropTypes.func,
+  deleteMovie: PropTypes.func,
+};

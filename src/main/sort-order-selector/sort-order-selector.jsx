@@ -1,22 +1,27 @@
-import {ButtonDropdown, DropdownItem, DropdownMenu, DropdownToggle} from "reactstrap";
+import { useState } from "react";
+import {
+  ButtonDropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+} from "reactstrap";
 
 const SORTING_OPTIONS = ["Release date", "Genre", "Name", "Director"];
 
 export function SortOrderSelector() {
-    // TODO doesn't work
-    let isDropdownOpen = false;
+  const [isDropdownOpen, setDropDownState] = useState(false);
 
-    return (
-        <ButtonDropdown
-            isOpen={isDropdownOpen}
-            toggle={() => isDropdownOpen = !isDropdownOpen}
-        >
-            <DropdownToggle caret>
-                Sort by
-            </DropdownToggle>
-            <DropdownMenu>
-                {SORTING_OPTIONS.map(option => <DropdownItem key={option}>{option}</DropdownItem>)}
-            </DropdownMenu>
-        </ButtonDropdown>
-    );
+  return (
+    <ButtonDropdown
+      isOpen={isDropdownOpen}
+      toggle={() => setDropDownState(!isDropdownOpen)}
+    >
+      <DropdownToggle caret>Sort by</DropdownToggle>
+      <DropdownMenu>
+        {SORTING_OPTIONS.map((option) => (
+          <DropdownItem key={option}>{option}</DropdownItem>
+        ))}
+      </DropdownMenu>
+    </ButtonDropdown>
+  );
 }
