@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import "./ModalTemplate.css";
 
 export function ModalTemplate(props) {
-  console.log(props);
   return (
     <Modal
       className="modal-template"

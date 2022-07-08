@@ -13,7 +13,7 @@ export function MovieList(props) {
           editMovie={() => {
             props.editMovie(movie);
           }}
-          deleteMovie={() => props.deleteMovie(movie.id)}
+          deleteMovie={() => props.deleteMovie(movie)}
         />
       ))}
     </div>
